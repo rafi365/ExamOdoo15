@@ -30,6 +30,7 @@
         'views/voiceactor_view.xml',
         'views/character_view.xml',
         'views/company_view.xml',
+        'views/published_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- kawakado.published tree view -->
+    <record id="kawakado_published_view_tree" model="ir.ui.view">
+        <field name="name">Published Catalogue</field>
+        <field name="model">kawakado.published</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="works_type"/>
+                <field name="status"/>
+                <field name="publish_date"/>
+                <field name="company_ids"/>
+                <field name="items_sold"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- kawakado.published form view -->
+    <record id="kawakado_published_view_form" model="ir.ui.view">
+        <field name="name">kawakado.published.view.form</field>
+        <field name="model">kawakado.published</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="works_type"/>
+                        <field name="status"/>
+                        <field name="publish_date"/>
+                        <field name="company_ids"/>
+                        <field name="items_sold"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="kawakado_published_action" model="ir.actions.act_window">
+        <field name="name">published List</field>
+        <field name="res_model">kawakado.published</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kawakado_published_menu_act" name="Published Catalogue" parent="kawakado_staff_menu_categ" action="kawakado_published_action" sequence="20"/>
+</odoo>
