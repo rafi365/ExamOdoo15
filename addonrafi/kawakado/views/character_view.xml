@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- kawakado.character tree view -->
+    <record id="kawakado_character_view_tree" model="ir.ui.view">
+        <field name="name">Character List</field>
+        <field name="model">kawakado.character</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="desc"/>
+                <field name="va_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- kawakado.character form view -->
+    <record id="kawakado_character_view_form" model="ir.ui.view">
+        <field name="name">kawakado.character.view.form</field>
+        <field name="model">kawakado.character</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="desc"/>
+                        <field name="va_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="kawakado_character_action" model="ir.actions.act_window">
+        <field name="name">Character List</field>
+        <field name="res_model">kawakado.character</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kawakado_character_menu_act" name="Character List" parent="kadokawa_staff_menu_categ" action="kawakado_character_action" sequence="20"/>
+</odoo>

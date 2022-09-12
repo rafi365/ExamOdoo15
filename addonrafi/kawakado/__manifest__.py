@@ -28,6 +28,7 @@
         'views/templates.xml',
         'views/menu.xml',
         'views/voiceactor_view.xml',
+        'views/character_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
