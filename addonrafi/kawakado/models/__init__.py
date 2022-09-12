@@ -5,3 +5,4 @@ from . import character
 from . import voiceactor
 from . import published
 from . import company
+from . import transaction

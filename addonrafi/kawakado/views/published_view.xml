@@ -40,7 +40,7 @@
     </record>
 
     <record id="kawakado_published_action" model="ir.actions.act_window">
-        <field name="name">published List</field>
+        <field name="name">Published List</field>
         <field name="res_model">kawakado.published</field>
         <field name="view_mode">tree,form</field>
     </record>
