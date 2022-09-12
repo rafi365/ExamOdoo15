@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- kawakado.company tree view -->
+    <record id="kawakado_company_view_tree" model="ir.ui.view">
+        <field name="name">company List</field>
+        <field name="model">kawakado.company</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="company_type"/>
+                <field name="address"/>
+                <field name="works_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- kawakado.company form view -->
+    <record id="kawakado_company_view_form" model="ir.ui.view">
+        <field name="name">kawakado.company.view.form</field>
+        <field name="model">kawakado.company</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="company_type"/>
+                        <field name="address"/>
+                        <field name="works_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="kawakado_company_action" model="ir.actions.act_window">
+        <field name="name">company List</field>
+        <field name="res_model">kawakado.company</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kawakado_company_menu_act" name="Company List" parent="kawakado_staff_menu_categ" action="kawakado_company_action" sequence="20"/>
+</odoo>

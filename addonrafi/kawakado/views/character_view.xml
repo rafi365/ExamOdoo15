@@ -11,6 +11,7 @@
                 <field name="name"/>
                 <field name="desc"/>
                 <field name="va_id"/>
+                <field name="published_ids"/>
             </tree>
         </field>
     </record>
@@ -27,6 +28,7 @@
                         <field name="name"/>
                         <field name="desc"/>
                         <field name="va_id"/>
+                        <field name="published_ids"/>
                     </group>
                 </sheet>
             </form>
@@ -40,5 +42,5 @@
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="kawakado_character_menu_act" name="Character List" parent="kadokawa_staff_menu_categ" action="kawakado_character_action" sequence="20"/>
+    <menuitem id="kawakado_character_menu_act" name="Character List" parent="kawakado_staff_menu_categ" action="kawakado_character_action" sequence="20"/>
 </odoo>

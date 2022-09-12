@@ -8,4 +8,5 @@ class Character(models.Model):
     name = fields.Char(string='Character Name')
     desc = fields.Char(string='Character Description')
     va_id = fields.Many2one('kawakado.voiceactor', string='Voice Actor')
+    published_ids = fields.Many2many('kawakado.published', string='Featured In')
     

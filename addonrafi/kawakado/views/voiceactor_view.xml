@@ -40,5 +40,5 @@
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="kawakado_voiceactor_menu_act" name="Voice Actor List" parent="kadokawa_staff_menu_categ" action="kawakado_voiceactor_action" sequence="10"/>
+    <menuitem id="kawakado_voiceactor_menu_act" name="Voice Actor List" parent="kawakado_staff_menu_categ" action="kawakado_voiceactor_action" sequence="10"/>
 </odoo>

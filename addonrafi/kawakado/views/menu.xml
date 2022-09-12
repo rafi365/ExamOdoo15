@@ -2,9 +2,9 @@
 <odoo>
 
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
-    <menuitem id="kadokawa_menu_root" name="Kadokawa ERP" sequence="10"/>
+    <menuitem id="kawakado_menu_root" name="Kawakado ERP" sequence="10"/>
 
     <!-- This Menu Item Must have a parent -->
-    <menuitem id="kadokawa_staff_menu_categ" name="Staff" parent="kadokawa_menu_root" sequence="10"/>
+    <menuitem id="kawakado_staff_menu_categ" name="Staff" parent="kawakado_menu_root" sequence="10"/>
 
 </odoo>
