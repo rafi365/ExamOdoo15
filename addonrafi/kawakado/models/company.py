@@ -8,7 +8,8 @@ class Company(models.Model):
     name = fields.Char(string='Company Name',required=True)
     company_type = fields.Selection([
         ('studio', 'Studio'),
-        ('publisher', 'Publisher')
+        ('publisher', 'Publisher'),
+        ('licensor', 'Licensor'),
     ], string='Company Type',required=True)
     address = fields.Char(string='Address')
     works_ids = fields.Many2many('kawakado.published', string='Published Work')
