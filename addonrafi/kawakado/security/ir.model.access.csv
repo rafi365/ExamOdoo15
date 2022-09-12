@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_kawakado_kawakado,kawakado.kawakado,model_kawakado_kawakado,base.group_user,1,1,1,1
+access_kawakado_character,access.kawakado.character,model_kawakado_character,,1,1,1,1
+access_kawakado_company,access.kawakado.company,model_kawakado_company,,1,1,1,1
+access_kawakado_published,access.kawakado.published,model_kawakado_published,,1,1,1,1
+access_kawakado_voiceactor,access.kawakado.voiceactor,model_kawakado_voiceactor,,1,1,1,1
