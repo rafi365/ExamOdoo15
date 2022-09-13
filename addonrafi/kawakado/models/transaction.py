@@ -1,5 +1,6 @@
 from odoo import api, fields, models
 import random
+from odoo.exceptions import ValidationError
 
 class Transaction(models.Model):
     _name = 'kawakado.transaction'
@@ -57,6 +58,14 @@ class TransactionDetails(models.Model):
     name = fields.Many2one('kawakado.published', string='Title')
     transaction_id = fields.Many2one('kawakado.transaction', string='Transaction')
     amount = fields.Integer(string='Amount')
+
+    @api.constrains('amount')
+    def check_amount(self):
+        for i in self:
+            if i.amount < 1:
+                raise ValidationError(f'Enter an Amount for {i.name.name}!')
+        return 0
+
     @api.model
     def create(self, vals):
         line = super(TransactionDetails, self).create(vals)
