@@ -6,7 +6,7 @@ class Published(models.Model):
     _description = 'Published Works'
 
     name = fields.Char(string='Title')
-    works_type = fields.Selection(string='Type', selection=[('anime', 'Anime'), ('manga', 'Manga'),])
+    works_type_id = fields.Many2one('kawakado.published_types', string='Type')
     character_ids = fields.Many2many('kawakado.character', string='Characters')
     status = fields.Selection([
         ('inproduction', 'In Production'),
@@ -20,3 +20,12 @@ class Published(models.Model):
     transaction_detail_ids = fields.One2many('kawakado.transaction_details', 'name', string='Transaction Detail')
     # cover image?
     # staff involved?
+
+class Published_Types(models.Model):
+    _name = 'kawakado.published_types'
+    _description = 'types of published work'
+
+    name = fields.Char(string='Type Name')
+    desc = fields.Char(string='Description')
+    published_ids = fields.One2many('kawakado.published', 'works_type_id', string='Works')
+    

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- kawakado.published_types tree view -->
+    <record id="kawakado_published_types_view_tree" model="ir.ui.view">
+        <field name="name">Work types</field>
+        <field name="model">kawakado.published_types</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="desc"/>
+                <field name="published_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- kawakado.published_types form view -->
+    <record id="kawakado_published_types_view_form" model="ir.ui.view">
+        <field name="name">Work type</field>
+        <field name="model">kawakado.published_types</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="desc"/>
+                        <field name="published_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="kawakado_published_types_action" model="ir.actions.act_window">
+        <field name="name">Work types</field>
+        <field name="res_model">kawakado.published_types</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kawakado_published_types_menu_act" name="Work types" parent="kawakado_staff_menu_categ" action="kawakado_published_types_action" sequence="20"/>
+</odoo>

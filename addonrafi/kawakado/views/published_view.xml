@@ -9,7 +9,7 @@
             <tree>
                 <!-- Add your fields here -->
                 <field name="name"/>
-                <field name="works_type"/>
+                <field name="works_type_id"/>
                 <field name="status"/>
                 <field name="publish_date"/>
                 <field name="company_ids"/>
@@ -28,7 +28,7 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="name" required="1"/>
-                        <field name="works_type" required="1"/>
+                        <field name="works_type_id" required="1"/>
                         <field name="status" required="1"/>
                         <field name="publish_date"/>
                         <field name="company_ids"/>

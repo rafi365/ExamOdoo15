@@ -31,6 +31,7 @@
         'views/character_view.xml',
         'views/company_view.xml',
         'views/published_view.xml',
+        'views/published_types_view.xml',
         'views/transaction_view.xml',
         'views/transaction_details_view.xml',
     ],
