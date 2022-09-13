@@ -11,7 +11,7 @@
                 <field name="name"/>
                 <field name="company_type"/>
                 <field name="address"/>
-                <field name="works_ids"/>
+                <field name="works_ids" widget="many2many_tags"/>
             </tree>
         </field>
     </record>

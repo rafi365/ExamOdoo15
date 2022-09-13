@@ -11,7 +11,7 @@
                 <field name="name"/>
                 <field name="gender"/>
                 <field name="desc"/>
-                <field name="character_ids"/>
+                <field name="character_ids" widget="many2many_tags"/>
             </tree>
         </field>
     </record>
@@ -28,7 +28,12 @@
                         <field name="name" required="1"/>
                         <field name="gender" required="1"/>
                         <field name="desc"/>
-                        <field name="character_ids" readonly="1"/>
+                        <field name="character_ids" readonly="1">
+                            <tree>
+                                <field name="name"/>
+                                <field name="desc" style="max-width: 200px"/>
+                            </tree>
+                        </field>
                     </group>
                 </sheet>
             </form>
