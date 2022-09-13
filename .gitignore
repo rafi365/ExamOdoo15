@@ -45,6 +45,6 @@ package.json
 /share/
 /src/
 /env/
-
+/odoo/
 # avoid adding it after generation from tsconfig command
 tsconfig.json
