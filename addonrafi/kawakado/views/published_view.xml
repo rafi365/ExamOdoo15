@@ -12,7 +12,7 @@
                 <field name="works_type_id"/>
                 <field name="status"/>
                 <field name="publish_date"/>
-                <field name="company_ids"/>
+                <field name="company_ids" widget="many2many_tags"/>
                 <field name="items_sold"/>
             </tree>
         </field>
@@ -32,7 +32,7 @@
                         <field name="status" required="1"/>
                         <field name="publish_date"/>
                         <field name="company_ids"/>
-                        <field name="items_sold"/>
+                        <field name="items_sold" readonly="1"/>
                     </group>
                 </sheet>
             </form>
