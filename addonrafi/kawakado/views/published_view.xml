@@ -26,24 +26,91 @@
             <form string="">
                 <sheet>
                     <group>
+                        <group string="Details">
+                            <field name="name" required="1"/>
+                            <field name="works_type_id" required="1"/>
+                            <field name="status" required="1"/>
+                            <field name="publish_date"/>
+                            <field name="items_sold" readonly="1"/>
+                        </group>
+                        <group string="Image">
+                            <field name="cover_img" widget="image" nolabel="1"/>
+                        </group>
+                    </group>
+                    <group>
                         <!-- Add your fields here -->
-                        <field name="name" required="1"/>
-                        <field name="works_type_id" required="1"/>
-                        <field name="status" required="1"/>
-                        <field name="publish_date"/>
                         <field name="company_ids"/>
-                        <field name="cover_img"/>
-                        <field name="items_sold" readonly="1"/>
+                        <field name="character_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="va_id">
+                                <tree>
+                                    <field name="name"/>
+                                
+                                </tree>
+                                </field>
+                            </tree>
+                        </field>
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+    
+    <!-- kawakado.published kanban view -->
+    <record id="kawakado_published_view_kanban" model="ir.ui.view">
+        <field name="name">kawakado.published.view.kanban</field>
+        <field name="model">kawakado.published</field>
+        <field name="arch" type="xml">
+            <kanban string="Kanban Description">
+                <!-- Add your fields here -->
+                <field name="id"/>
+                <field name="name"/>
+                <field name="cover_img"/>
+                <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img alt="Avatar" t-att-src="kanban_image('kawakado.published', 'cover_img', record.id.raw_value)"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li class="mb4">
+                                            <strong><field name="name"/></strong>
+                                        </li>
+                                        <li>
+                                            <strong>Type</strong>
+                                            <field name="works_type_id"/>
+                                        </li>
+                                        <li>
+                                            <strong>Status</strong>
+                                            <field name="status"/>
+                                        </li>
+                                        <li>
+                                            <strong>Published Date</strong>
+                                            <field name="publish_date"/>
+                                        </li>
+                                        <li>
+                                            <strong>Produced By</strong>
+                                            <field name="company_ids"/>
+                                        </li>
+                                        <li>
+                                            <strong>Characters</strong>
+                                            <field name="character_ids"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+            </kanban>
         </field>
     </record>
 
     <record id="kawakado_published_action" model="ir.actions.act_window">
         <field name="name">Published List</field>
         <field name="res_model">kawakado.published</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
