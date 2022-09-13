@@ -6,7 +6,7 @@ class Published(models.Model):
     _description = 'Published Works'
 
     name = fields.Char(string='Title')
-    works_type_id = fields.Many2one('kawakado.published_types', string='Type')
+    works_type_id = fields.Many2one('kawakado.published_types', string='Type',ondelete='cascade')
     character_ids = fields.Many2many('kawakado.character', string='Characters')
     status = fields.Selection([
         ('inproduction', 'In Production'),
