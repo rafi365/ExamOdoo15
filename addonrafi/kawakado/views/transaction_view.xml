@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- kawakado.transaction tree view -->
+    <record id="kawakado_transaction_view_tree" model="ir.ui.view">
+        <field name="name">Transactions</field>
+        <field name="model">kawakado.transaction</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="company_ids" widget="many2many_tags"/>
+                <field name="transaction_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- kawakado.transaction form view -->
+    <record id="kawakado_transaction_view_form" model="ir.ui.view">
+        <field name="name">kawakado.transaction.view.form</field>
+        <field name="model">kawakado.transaction</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="company_ids"/>
+                        <field name="transaction_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="kawakado_transaction_action" model="ir.actions.act_window">
+        <field name="name">Transactions</field>
+        <field name="res_model">kawakado.transaction</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kawakado_transaction_menu_act" name="Transactions" parent="kawakado_staff_menu_categ" action="kawakado_transaction_action" sequence="20"/>
+</odoo>

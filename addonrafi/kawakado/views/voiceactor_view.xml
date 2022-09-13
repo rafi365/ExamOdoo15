@@ -9,6 +9,7 @@
             <tree>
                 <!-- Add your fields here -->
                 <field name="name"/>
+                <field name="gender"/>
                 <field name="desc"/>
                 <field name="character_ids"/>
             </tree>
@@ -25,6 +26,7 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="name"/>
+                        <field name="gender"/>
                         <field name="desc"/>
                         <field name="character_ids"/>
                     </group>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- kawakado.transaction_details tree view -->
+    <record id="kawakado_transaction_details_view_tree" model="ir.ui.view">
+        <field name="name">Transaction_details</field>
+        <field name="model">kawakado.transaction_details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <!-- <field name="transaction_id"/> -->
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- kawakado.transaction_details form view -->
+    <record id="kawakado_transaction_details_view_form" model="ir.ui.view">
+        <field name="name">kawakado.transaction_details.view.form</field>
+        <field name="model">kawakado.transaction_details</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <!-- <field name="transaction_id"/> -->
+                        <field name="amount"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

@@ -17,5 +17,6 @@ class Published(models.Model):
     publish_date = fields.Date('Publish Date')
     company_ids = fields.Many2many('kawakado.company', string='Produced By')
     items_sold = fields.Integer('Items Sold')
+    transaction_detail_ids = fields.One2many('kawakado.transaction_details', 'name', string='Transaction Detail')
     # cover image?
     # staff involved?
