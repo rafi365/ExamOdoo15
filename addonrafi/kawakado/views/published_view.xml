@@ -32,6 +32,7 @@
                         <field name="status" required="1"/>
                         <field name="publish_date"/>
                         <field name="company_ids"/>
+                        <field name="cover_img"/>
                         <field name="items_sold" readonly="1"/>
                     </group>
                 </sheet>
