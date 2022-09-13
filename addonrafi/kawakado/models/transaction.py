@@ -1,11 +1,15 @@
 from odoo import api, fields, models
-
+import random
 
 class Transaction(models.Model):
     _name = 'kawakado.transaction'
     _description = 'Transact model'
 
-    name = fields.Char(string='order id')
+    def get_orderID(self):
+        tgl_lap = fields.Date.today()
+        return tgl_lap.strftime("%d/%m/%Y")+"/"+hex(random.getrandbits(24)).lstrip("0x").rstrip("L")
+
+    name = fields.Char(string='order id',default=get_orderID,readonly=True)
     company_ids = fields.Many2many('kawakado.company', string='Buying Company')
     transaction_ids = fields.One2many('kawakado.transaction_details', 'transaction_id', string='Transaction')
 
