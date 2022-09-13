@@ -9,7 +9,7 @@ class Transaction(models.Model):
         tgl_lap = fields.Date.today()
         return tgl_lap.strftime("%d/%m/%Y")+"/"+hex(random.getrandbits(24)).lstrip("0x").rstrip("L")
 
-    name = fields.Char(string='order id',default=get_orderID,readonly=True)
+    name = fields.Char(string='order id',default=get_orderID)
     company_ids = fields.Many2many('kawakado.company', string='Buying Company')
     transaction_ids = fields.One2many('kawakado.transaction_details', 'transaction_id', string='Transaction')
 

@@ -25,10 +25,10 @@
                 <sheet>
                     <group>
                         <!-- Add your fields here -->
-                        <field name="name"/>
-                        <field name="gender"/>
+                        <field name="name" required="1"/>
+                        <field name="gender" required="1"/>
                         <field name="desc"/>
-                        <field name="character_ids"/>
+                        <field name="character_ids" readonly="1"/>
                     </group>
                 </sheet>
             </form>

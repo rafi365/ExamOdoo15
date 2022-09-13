@@ -24,7 +24,7 @@
                 <sheet>
                     <group>
                         <!-- Add your fields here -->
-                        <field name="name"/>
+                        <field name="name" readonly="1"/>
                         <field name="company_ids"/>
                         <field name="transaction_ids"/>
                     </group>
