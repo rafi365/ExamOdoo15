@@ -1,5 +1,4 @@
 from odoo import models ,fields
-from datetime import timedelta
 class PartnerXlsx(models.AbstractModel):
     _name = 'report.kawakado.report_kawakado.transaction_xlsx'
     _inherit = 'report.report_xlsx.abstract'
@@ -29,12 +28,4 @@ class PartnerXlsx(models.AbstractModel):
             sheet.write(row, col, obj.name)
             sheet.write(row, col+1, self.concator(obj.company_ids))
             sheet.write(row, col+2, self.concator(self.unpacker(obj.transaction_ids)))
-            # for xxx in obj.detailtransaction_ids:
-            #     sheet.set_column(col+5, col+5, 50)
-            #     sheet.set_row(row, 100)  # Set the height of Row 1 to 20.
-            #     sheet.write(row, col+4, f"""Name : {xxx.barang_id.name}
-            #     qty : {xxx.qty}
-            #     subtotal : {xxx.subtotal}
-            #     """)
-            #     col += 1
             row += 1
