@@ -39,6 +39,7 @@
         'views/person_view.xml',
         'views/ceo_view.xml',
         'views/fanmail_view.xml',
+        'wizard/deletetransaction_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

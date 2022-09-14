@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- kawakado.deletetransaction form view -->
+    <record id="transaction_delete_view_form_wizard" model="ir.ui.view">
+        <field name="name">Transaction Deletor</field>
+        <field name="model">kawakado.deletetransaction</field>
+        <field name="arch" type="xml">
+            <form string="Transaction Select">
+                <group>
+                    <field name="barang_id" />
+                </group>
+
+                <footer>
+                    <button name='button_transaction_delete'
+                            type='object'
+                            string='Delete'
+                            class='btn btn-danger' />
+                    <button string='Cancel'
+                            special='cancel'
+                            class='btn btn-secondary' />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- kawakado.transaction action window -->
+    <record id="transaction_delete_action_wizard" model="ir.actions.act_window">
+        <field name="name">Transaction Deletor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kawakado.deletetransaction</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref='transaction_delete_view_form_wizard' />
+        <field name="target">new</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="transaction_delete_menu_action_wizard"
+        name="Delete transaction"
+        parent="kawakado_menu_root"
+        action="transaction_delete_action_wizard"
+        sequence="48"/>
+
+</odoo>
