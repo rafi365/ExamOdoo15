@@ -4,45 +4,100 @@
     <template id="report_published_pdf">
         <t t-call="web.html_container">
             <t t-call="web.internal_layout">
+                <style>
+                html, body, section, div {
+                    height: 100%;
+                }
+
+                body { 
+                    color: #fff;
+                    font-family: sans-serif;
+                    font-size: 1.25rem;
+                    line-height: 150%;
+                    text-shadow: 0 2px 2px #b6701e;
+                }
+
+                h1 {
+                    font-size: 1.75rem;
+                    margin: 0 0 0.75rem 0;
+                }
+
+                // Pattern styles
+                .container {
+                    display: table;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                div {
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 50%;
+                    padding: 1rem;
+                }
+                .div_left {
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 30%;
+                    padding: 1rem;
+                }
+                ul {
+                    list-style-type: none;
+                }
+
+
+                                    <!-- .left-half {
+                background: #ff9e2c;
+                }
+
+                .right-half {
+                background: #b6701e;
+                } -->
+                </style>
                 <div class="page">
                     <h2 style="text-align: center;">
-                        Kawakado Catalogue
+                        <b>Kawakado Catalogue</b>
                     </h2>
                     <t t-foreach="docs" t-as="d">
-                        <div>
-                            <div class="o_kanban_image" style="float:left;">
-                                <img t-attf-src="data:image/*;base64,{{d.cover_img}}" t-att-alt="d.name" width="200"/>
+                        <section class="container">
+                            <div class="left-half div_left">
+                                <article>
+                                    <img t-attf-src="data:image/*;base64,{{d.cover_img}}" t-att-alt="d.name" width="200"/>
+                                    <br/>
+                                    <strong>
+                                        <span t-field="d.name"/>
+                                    </strong>
+                                </article>
                             </div>
-                            <div class="oe_kanban_details" style="float:right;">
-                                <ul>
-                                    <li class="mb4">
-                                        <strong>
-                                            <span t-field="d.name"/>
-                                        </strong>
-                                    </li>
-                                    <li>
-                                        <strong>Type</strong>
-                                        <span t-field="d.works_type_id"/>
-                                    </li>
-                                    <li>
-                                        <strong>Status</strong>
-                                        <span t-field="d.status"/>
-                                    </li>
-                                    <li>
-                                        <strong>Published Date</strong>
-                                        <span t-field="d.publish_date"/>
-                                    </li>
-                                    <li>
-                                        <strong>Produced By</strong>
-                                        <span t-field="d.company_ids"/>
-                                    </li>
-                                    <li>
-                                        <strong>Characters</strong>
-                                        <span t-field="d.character_ids"/>
-                                    </li>
-                                </ul>
+                            <div class="right-half">
+                                <article>
+                                    <ul>
+                                        <li>
+                                            <strong>Type</strong>
+                                            <span t-field="d.works_type_id"/>
+                                        </li>
+                                        <li>
+                                            <strong>Status</strong>
+                                            <span t-field="d.status"/>
+                                        </li>
+                                        <li>
+                                            <strong>Published Date</strong>
+                                            <span t-field="d.publish_date"/>
+                                        </li>
+                                        <li>
+                                            <strong>Produced By</strong>
+                                            <span t-field="d.company_ids"/>
+                                        </li>
+                                        <li>
+                                            <strong>Characters</strong>
+                                            <span t-field="d.character_ids"/>
+                                        </li>
+                                    </ul>
+                                </article>
                             </div>
-                        </div>
+                        </section>
+                        <br/>
+                        <br/>
                         <br/>
                     </t>
                 </div>
