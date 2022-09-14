@@ -25,6 +25,7 @@ class PartnerXlsx(models.AbstractModel):
         col = 0
         for obj in transaction:
             col = 0
+            sheet.set_column(row, col, 50)
             sheet.write(row, col, obj.name)
             sheet.write(row, col+1, self.concator(obj.company_ids))
             sheet.write(row, col+2, self.concator(self.unpacker(obj.transaction_ids)))
