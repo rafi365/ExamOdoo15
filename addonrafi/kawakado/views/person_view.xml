@@ -25,6 +25,7 @@
                     <group name="nama" string="Nama">
                         <!-- Add your fields here -->
                         <field name="name" />
+                        <field name="useless" readonly="1"/>
                     </group>
                     <group name="data" string="Data">
                         <field name="alamat" />

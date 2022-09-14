@@ -8,6 +8,12 @@ class Person(models.Model):
     name = fields.Char(string='Name')
     alamat = fields.Char(string='Address')
     tgl_lahir = fields.Datetime(string='BirthDate')
+    useless = fields.Char(string=' ')
+
+    @api.onchange('name')
+    def onnamechange(self):
+        self.useless = self.name
+    
 
 
 class Ceo(models.Model):
