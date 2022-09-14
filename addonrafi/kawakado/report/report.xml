@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_transaction_xlsx" model="ir.actions.report">
+        <field name="name">transaction Excel</field>
+        <field name="model">kawakado.transaction</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">kawakado.report_kawakado.transaction_xlsx</field>
+        <field name="report_file">report_kawakado.transaction_xlsx</field>
+        <field name="binding_model_id" ref="model_kawakado_transaction"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="report_published_pdf" model="ir.actions.report">
+        <field name="name">Print Catalogue</field>
+        <field name="model">kawakado.published</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">kawakado.report_published_pdf</field>
+        <field name="report_file">kawakado.report_published_pdf</field>
+        <field name="binding_model_id" ref="model_kawakado_published"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

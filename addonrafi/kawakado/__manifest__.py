@@ -34,6 +34,8 @@
         'views/published_types_view.xml',
         'views/transaction_view.xml',
         'views/transaction_details_view.xml',
+        'report/report.xml',
+        'report/printanimecoverPDF.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

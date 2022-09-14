@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_published_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <h2 style="text-align: center;">
+                        Kawakado Catalogue
+                    </h2>
+                    <t t-foreach="docs" t-as="d">
+                        <div>
+                            <div class="o_kanban_image" style="float:left;">
+                                <img t-attf-src="data:image/*;base64,{{d.cover_img}}" t-att-alt="d.name" width="200"/>
+                            </div>
+                            <div class="oe_kanban_details" style="float:right;">
+                                <ul>
+                                    <li class="mb4">
+                                        <strong>
+                                            <span t-field="d.name"/>
+                                        </strong>
+                                    </li>
+                                    <li>
+                                        <strong>Type</strong>
+                                        <span t-field="d.works_type_id"/>
+                                    </li>
+                                    <li>
+                                        <strong>Status</strong>
+                                        <span t-field="d.status"/>
+                                    </li>
+                                    <li>
+                                        <strong>Published Date</strong>
+                                        <span t-field="d.publish_date"/>
+                                    </li>
+                                    <li>
+                                        <strong>Produced By</strong>
+                                        <span t-field="d.company_ids"/>
+                                    </li>
+                                    <li>
+                                        <strong>Characters</strong>
+                                        <span t-field="d.character_ids"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br/>
+                    </t>
+                </div>
+            </t>
+        </t>
+
+    </template>
+
+</odoo>
