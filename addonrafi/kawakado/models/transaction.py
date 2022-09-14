@@ -14,6 +14,27 @@ class Transaction(models.Model):
     company_ids = fields.Many2many('kawakado.company', string='Buying Company')
     transaction_ids = fields.One2many('kawakado.transaction_details', 'transaction_id', string='Transaction')
 
+    state = fields.Selection(
+        string='Status',
+        selection=[('draft', 'Draft'),
+                   ('confirm', 'Confirm'),
+                   ('done', 'Done'),
+                   ('cancelled', 'Cancelled'),
+                   ],
+        required=True, readonly=True, default='draft')
+
+    def action_confirm(self):
+        self.write({'state': 'confirm'})
+
+    def action_done(self):
+        self.write({'state': 'done'})
+
+    def action_cancel(self):
+        self.write({'state': 'cancelled'})
+
+    def action_draft(self):
+        self.write({'state': 'draft'})
+
     def write(self, vals):
         for i in self:
             for line in i:

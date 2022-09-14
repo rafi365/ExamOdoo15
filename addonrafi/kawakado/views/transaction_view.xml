@@ -11,6 +11,7 @@
                 <field name="name"/>
                 <field name="company_ids" widget="many2many_tags"/>
                 <field name="transaction_ids" widget="many2many_tags"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
@@ -21,12 +22,19 @@
         <field name="model">kawakado.transaction</field>
         <field name="arch" type="xml">
             <form string="">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="btn btn-primary" states="draft"/>
+                    <button name="action_done" type="object" string="Done" class="btn btn-primary" states="confirm"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn btn-warning" states="confirm" confirm="Are you sure to cancel the Transaction?"/>
+                    <button name="action_draft" type="object" string="Back to Draft" class="btn btn-danger" states="cancelled" confirm="Are you sure to edit the Transaction?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                </header>
                 <sheet>
                     <group>
                         <!-- Add your fields here -->
                         <field name="name" readonly="1"/>
-                        <field name="company_ids"/>
-                        <field name="transaction_ids">
+                        <field name="company_ids" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="transaction_ids" attrs="{'readonly' : [('state', '!=', 'draft')]}">
                             <tree editable="bottom">
                                 <field name="name"/>
                                 <field name="amount" sum="Total"/>
