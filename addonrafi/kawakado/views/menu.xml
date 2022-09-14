@@ -5,6 +5,7 @@
     <menuitem id="kawakado_menu_root" name="Kawakado ERP" sequence="10"/>
 
     <!-- This Menu Item Must have a parent -->
-    <menuitem id="kawakado_staff_menu_categ" name="Staff" parent="kawakado_menu_root" sequence="10"/>
+    <menuitem id="kawakado_management_menu_categ" name="Management" parent="kawakado_menu_root" sequence="10"/>
+    <menuitem id="kawakado_assets_menu_categ" name="Assets" parent="kawakado_menu_root" sequence="20"/>
 
 </odoo>

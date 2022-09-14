@@ -45,5 +45,5 @@
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="kawakado_transaction_menu_act" name="Transactions" parent="kawakado_staff_menu_categ" action="kawakado_transaction_action" sequence="20"/>
+    <menuitem id="kawakado_transaction_menu_act" name="Transactions" parent="kawakado_menu_root" action="kawakado_transaction_action" sequence="30"/>
 </odoo>

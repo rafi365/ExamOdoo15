@@ -114,5 +114,5 @@
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="kawakado_published_menu_act" name="Published Catalogue" parent="kawakado_staff_menu_categ" action="kawakado_published_action" sequence="20"/>
+    <menuitem id="kawakado_published_menu_act" name="Published Catalogue" parent="kawakado_assets_menu_categ" action="kawakado_published_action" sequence="20"/>
 </odoo>
