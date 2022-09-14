@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- kawakado.ceo inherit tree view -->
+    <record id="kawakado_ceo_view_tree_inherit" model="ir.ui.view">
+        <field name="name">CEO List</field>
+        <field name="model">kawakado.ceo</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="kawakado_person_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id_ceo" />
+            </xpath>          
+        </field>
+    </record>
+
+    <!-- kawakado.ceo inherit form view -->
+    <record id="kawakado_ceo_view_form_inherit" model="ir.ui.view">
+        <field name="name">Form CEO</field>
+        <field name="model">kawakado.ceo</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="kawakado_person_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group[2]" position="after">
+                <group name="id" string="ID">
+                    <field name="id_ceo" />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='alamat']" position="attributes">
+               <attribute name="string">Address</attribute>
+            </xpath>          
+        </field> 
+    </record>
+
+    <!-- kawakado.ceo action window -->
+    <record id="kawakado_ceo_action" model="ir.actions.act_window">
+        <field name="name">CEO List</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kawakado.ceo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="kawakado_ceo_menu_act"
+        name="CEO list"
+        parent="kawakado_management_menu_categ"
+        action="kawakado_ceo_action"
+        sequence="40"/>
+
+</odoo>

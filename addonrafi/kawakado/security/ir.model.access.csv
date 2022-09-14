@@ -6,3 +6,6 @@ access_kawakado_voiceactor,access.kawakado.voiceactor,model_kawakado_voiceactor,
 access_kawakado_transaction,access.kawakado.transaction,model_kawakado_transaction,,1,1,1,1
 access_kawakado_transaction_details,access.kawakado.transaction_details,model_kawakado_transaction_details,,1,1,1,1
 access_kawakado_published_types,access.kawakado.published_types,model_kawakado_published_types,,1,1,1,1
+access_kawakado_person,access.kawakado.person,model_kawakado_person,,1,1,1,1
+access_kawakado_ceo,access.kawakado.ceo,model_kawakado_ceo,,1,1,1,1
+access_kawakado_cleaningservice,access.kawakado.cleaningservice,model_kawakado_cleaningservice,,1,1,1,1

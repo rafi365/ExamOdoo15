@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- res.partner inherit tree view -->
+    <record id="res_partner_fanmail_view_tree_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="mode">extension</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="is_sub"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.partner inherit form view -->
+    <record id="res_partner_fanmail_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="mode">extension</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="is_sub"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.partner action window -->
+    <record id="res_partner_fanmail_action" model="ir.actions.act_window">
+        <field name="name">Fanmail</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">
+            {
+                'search_default_fanmail': 1,
+                'default_is_sub':True 
+            }
+        </field>
+    </record>
+
+    <!-- res.partner inherit search view -->
+    <record id="res_partner_fanmail_inherit_search" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <filter name="fanmail" string="fanmail" domain="[('is_sub', '=', True)]" />
+            </field>
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fanmail_view_menu_act" name="Fan Mail Subscription" parent="kawakado_menu_root" action="res_partner_fanmail_action" sequence="40"/>
+
+</odoo>

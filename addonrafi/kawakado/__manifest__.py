@@ -36,6 +36,9 @@
         'views/transaction_details_view.xml',
         'report/report.xml',
         'report/printanimecoverPDF.xml',
+        'views/person_view.xml',
+        'views/ceo_view.xml',
+        'views/fanmail_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
