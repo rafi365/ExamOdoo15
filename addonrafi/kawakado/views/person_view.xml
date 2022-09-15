@@ -26,6 +26,7 @@
                         <!-- Add your fields here -->
                         <field name="name" />
                         <field name="useless" readonly="1"/>
+                        <field name="uselessv2" readonly="1"/>
                     </group>
                     <group name="data" string="Data">
                         <field name="alamat" />
