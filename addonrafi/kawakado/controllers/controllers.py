@@ -11,11 +11,13 @@ class Kawakado(http.Controller):
         isi = []
         for bb in publ:
             isi.append({
+                'ID' : bb.id,
                 'Title' : bb.name,
                 'Type' : bb.works_type_id.name,
                 'status' : bb.status,
                 'publish_date':(bb.publish_date+ timedelta(hours=7)).strftime("%d/%m/%Y"),
                 'sold' : bb.items_sold,
+                'img_url' : f"/web/image?model=kawakado.published&id={bb.id}&field=cover_img"
             })
         return json.dumps(isi)
 
